@@ -10,6 +10,7 @@ import errorTestRoutesPlugin from "./plugins/error-test.plugin";
 import oAuthPlugin from "./plugins/oauth.plugin";
 import socketPlugin from "./plugins/socket.plugin";
 import jwtPlugin from "./plugins/jwt.plugin";
+import swaggerPlugin from "./plugins/swagger.plugin";
 import { loggerConfig } from "./utils/logger.util";
 import { customErrorMessagePlugin } from "./plugins/ajv-error.plugin";
 
@@ -45,6 +46,7 @@ export const buildApp = async (): Promise<
   await app.register(oAuthPlugin);
   await app.register(jwtPlugin);
   await app.register(socketPlugin);
+  await app.register(swaggerPlugin);
   await app.register(errorTestRoutesPlugin);
 
   // Routes
